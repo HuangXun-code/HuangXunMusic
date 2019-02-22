@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <!--该Imageview需调整为水平居中布局(android:layout_gravity)，
+    且四周留出一定的间隔（android:layout_margin）-->
+    <ImageView
+        android:id="@+id/img_login_ico"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/img_margin"
+        android:src="@mipmap/logo"
+        />
+
+
+    <EditText
+        android:id="@+id/edt_username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/uname_hint"/>
+
+
+    <EditText
+        android:id="@+id/edt_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberPassword"
+        android:hint="@string/pwd_hint"/>
+
+    <CheckBox
+        android:id="@+id/chk_savename"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="记住用户名"
+        android:checked="true"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--下面两个Button字体大小可自行调整。这里大家思考一下为什么在水平线性布局里
+        要用两个layout_weight相同的垂直线性布局分别包含两个按钮，
+        如果去掉这两个垂直线性布局有什么影响？有没有其他的方案可以实现相同的效果？-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:src="@drawable/login">
+
+            <Button
+                android:id="@+id/btn_quit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/quit"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/btn_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/login"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+</LinearLayout>
